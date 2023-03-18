@@ -3,11 +3,6 @@ let square;
 let difficulty = document.getElementById("difficulty");
 const playBtn = document.querySelector(".btn");
 
-//richiamo funzione al click
-playBtn.addEventListener("click" , function(){
-    createGrid(difficulty.value);
-});
-
 //funzione che crea la griglia in base alla difficoltà
 function createGrid(difficulty) {
     grid.innerHTML = "";
@@ -30,4 +25,21 @@ function createGrid(difficulty) {
         square.innerHTML = `<span>${i + 1}</span>`;
         grid.appendChild(square);
     }
+
+    
+    
 }
+
+//funzionalità bottone play
+playBtn.addEventListener("click" , function(){
+    createGrid(difficulty.value);
+    let squares = document.querySelectorAll(".box");
+    squares.forEach(function(square){
+        square.addEventListener("click", function(){
+            square.classList.add("toggled");
+            console.log(square.innerText);
+        })
+    })
+});
+
+
