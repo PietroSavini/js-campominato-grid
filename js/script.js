@@ -3,7 +3,7 @@ let square;
 let difficulty = document.getElementById("difficulty");
 const playBtn = document.querySelector(".btn");
 
-//funzione che crea la griglia in base alla difficoltà
+//funzione che crea la griglia in base alla difficoltà/////////////////////////////////////
 function createGrid(difficulty) {
     grid.innerHTML = "";
     let numSquares;
@@ -27,7 +27,7 @@ function createGrid(difficulty) {
     }
 }
 
-//funzionalità bottone play
+//funzionalità al click degli square//////////////////////////////////////////////////
 playBtn.addEventListener("click" , function(){
     createGrid(difficulty.value);
     let squares = document.querySelectorAll(".box");
