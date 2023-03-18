@@ -25,9 +25,6 @@ function createGrid(difficulty) {
         square.innerHTML = `<span>${i + 1}</span>`;
         grid.appendChild(square);
     }
-
-    
-    
 }
 
 //funzionalità bottone play
@@ -36,7 +33,11 @@ playBtn.addEventListener("click" , function(){
     let squares = document.querySelectorAll(".box");
     squares.forEach(function(square){
         square.addEventListener("click", function(){
-            square.classList.add("toggled");
+            if(square.classList.contains("toggled")){
+                square.classList.remove("toggled");
+            }else{
+                square.classList.add("toggled");
+            }
             console.log(square.innerText);
         })
     })
